@@ -10,8 +10,7 @@ This is a template for rapidly starting holochain projects.
 4. Initialize:
 ```
 $ ./init.sh
-Project name?
-myproject
+Using "myproject" as the project's name
 Main data type?
 Post
 Setting up git

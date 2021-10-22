@@ -18,12 +18,17 @@ function rename {
         done
     done
 }
-echo "Project name?"
-read project
+project=${PWD##*/}
+if [ "$project" == "xyzzy" ]; then
+    echo "Rename this directory to your project's name!"
+    exit 1
+fi
+echo "Using \"$project\" as the project's name"
 echo "Main data type?"
 read datatype
 
 echo "Setting up git"
+rm -rf .git
 git init
 git add .
 git reset HEAD -- init.sh
