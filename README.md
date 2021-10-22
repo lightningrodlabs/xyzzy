@@ -7,7 +7,9 @@ This is a template for rapidly starting holochain projects.
 1. Clone this repo: `git clone https://github.com/lightningrodlabs/xyzzy`
 2. Rename to you project: `mv xyzzy myproject`
 3. `cd myproject`
-4. Initialize:
+4. Initialize: `./init.sh`
+
+This will ask you for the name of the project (you should probably use what you renamed the directory to in step 2), and also will ask you for a primary data type. 
 ```
 $ ./init.sh
 Project name?
