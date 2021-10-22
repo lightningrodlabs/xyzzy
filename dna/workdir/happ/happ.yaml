@@ -1,0 +1,15 @@
+---
+manifest_version: "1"
+name: xyzzy
+description: ~
+slots:
+  - id: xyzzy-slot
+    provisioning:
+      strategy: create
+      deferred: false
+    dna:
+      bundled: "../dna/xyzzy.dna"
+      properties: ~
+      uuid: ~
+      version: ~
+      clone_limit: 0

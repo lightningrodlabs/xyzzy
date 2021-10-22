@@ -1,0 +1,7 @@
+---
+manifest_version: "1"
+name: xyzzy
+ui:
+  bundled: "../ui/apps/xyzzy/ui.zip"
+happ_manifest:
+  bundled: "../dna/workdir/happ/xyzzy.happ"
