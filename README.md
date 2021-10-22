@@ -16,7 +16,7 @@ Using "myproject" as the project's name
 Main data type?
 Post
 Setting up git
-Reinitialized Git repository in /home/user/path/to//myproject/.git/
+Reinitialized Git repository in /home/user/path/to/myproject/.git/
 Replacing all occurences of Xyzzy with Myproject 
 sed: can't read : No such file or directory
 Replacing all occurences of xyzzy with myproject 
