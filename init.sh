@@ -12,7 +12,7 @@ function replace {
 function rename {
     for fileType in d f
     do    
-        find  -type $fileType -iname "$1*" |while read file
+        find  -type $fileType -iname "*$1*" |while read file
         do
         mv $file $( sed -r "s/$1/$2/" <<< $file )
         done

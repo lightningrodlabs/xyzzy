@@ -112,15 +112,11 @@ export class XyzzyZthingDialog extends ScopedElementsMixin(LitElement) {
     return [
       sharedStyles,
       css`
-        mwc-dialog div, mwc-formfield, mwc-select {
+        mwc-dialog div {
           display: flex;
         }
         #zthing-dialog {
           --mdc-dialog-min-width: 600px;
-        }
-        #width-field, #height-field {
-          margin-top: 10px;
-          display: inline-flex;
         }
         mwc-textfield {
           margin-top: 10px;
