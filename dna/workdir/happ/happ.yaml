@@ -2,8 +2,8 @@
 manifest_version: "1"
 name: xyzzy
 description: ~
-slots:
-  - id: xyzzy-slot
+roles:
+  - id: xyzzy-role
     provisioning:
       strategy: create
       deferred: false
