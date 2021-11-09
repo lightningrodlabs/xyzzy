@@ -10,7 +10,7 @@ import {xyzzyContext, Zthing, Dictionary, Signal} from "../types";
 import { XyzzyStore } from "../xyzzy.store";
 import { XyzzyZthing } from "./xyzzy-zthing";
 import { XyzzyZthingDialog } from "./xyzzy-zthing-dialog";
-import { lightTheme, SlAvatar } from '@scoped-elements/shoelace';
+import { SlAvatar } from '@scoped-elements/shoelace';
 import { ScopedElementsMixin } from "@open-wc/scoped-elements";
 import {
   ListItem,
@@ -318,7 +318,6 @@ export class XyzzyController extends ScopedElementsMixin(LitElement) {
 
   static get styles() {
     return [
-      lightTheme,
       sharedStyles,
       css`
         :host {

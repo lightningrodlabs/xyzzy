@@ -7,12 +7,16 @@
         background: #fafafa;
       }
     </style>
-  </head>
-  <body style="margin-top:2px;">
-    <xyzzy-app></xyzzy-app>
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+</head>
+<body style="margin-top:2px;margin-bottom:0px;">
+  <xyzzy-app></xyzzy-app>
 
     <script type="module">
-      import { XyzzyApp } from './src/index.ts';
+      import { XyzzyApp } from './out-tsc';
       customElements.define('xyzzy-app', XyzzyApp);
     </script>
   </body>
