@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@holochain-playground/cli": "^0.0.8",
+    "@lit/reactive-element": "1.2.1",
     "concurrently": "^6.2.1",
     "concurrently-repeat": "^0.0.1",
     "cross-env": "^7.0.3",
