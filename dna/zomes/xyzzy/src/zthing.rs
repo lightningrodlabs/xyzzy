@@ -31,7 +31,7 @@ fn create_zthing(input: Zthing) -> ExternResult<EntryHashB64> {
     emit_signal(&SignalPayload::new(hash.clone().into(), Message::NewZthing(input)))?;
     let path = get_zthings_path();
     path.ensure()?;
-    let anchor_hash = path.hash()?;
+    let anchor_hash = path.path_entry_hash()?;
     create_link(anchor_hash, hash.clone(), ())?;
     Ok(hash.into())
 }
@@ -40,7 +40,7 @@ fn create_zthing(input: Zthing) -> ExternResult<EntryHashB64> {
 #[hdk_extern]
 fn get_zthings(_: ()) -> ExternResult<Vec<ZthingOutput>> {
     let path = get_zthings_path();
-    let anchor_hash = path.hash()?;
+    let anchor_hash = path.path_entry_hash()?;
     let zthings = get_zthings_inner(anchor_hash)?;
     Ok(zthings)
 }

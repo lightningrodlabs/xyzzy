@@ -1,4 +1,4 @@
-import { ContextProvider } from "@lit-labs/context";
+import { ContextProvider } from "@holochain-open-dev/context";
 import { state } from "lit/decorators.js";
 import {
   XyzzyController,
@@ -11,7 +11,6 @@ import {
   ProfilesStore,
   profilesStoreContext,
 } from "@holochain-open-dev/profiles";
-import { AppWebsocket } from "@holochain/conductor-api";
 import { HolochainClient } from "@holochain-open-dev/cell-client";
 import { ScopedElementsMixin } from "@open-wc/scoped-elements";
 import { LitElement, html } from "lit";
@@ -21,17 +20,18 @@ export class XyzzyApp extends ScopedElementsMixin(LitElement) {
   loaded = false;
 
   async firstUpdated() {
-    const appWebsocket = await AppWebsocket.connect(
-      `ws://localhost:${process.env.HC_PORT}`
+    
+    const client = await HolochainClient.connect(`ws://localhost:${process.env.HC_PORT}`, "xyzzy");
+
+    const providerClient = client.forCell(
+      client.cellDataByRoleId('profiles')!
     );
-    const appInfo = await appWebsocket.appInfo({
-      installed_app_id: "xyzzy",
-    });
 
-    const cellData = appInfo.cell_data[0];
-    const cellClient = new HolochainClient(appWebsocket, cellData);
+    const xyzzyClient = client.forCell(
+      client.cellDataByRoleId('xyzzy')!
+    );
 
-    const store = new ProfilesStore(cellClient, {avatarMode: "avatar"})
+    const store = new ProfilesStore(providerClient, {avatarMode: "avatar"})
 
     store.fetchAllProfiles()
 
@@ -41,7 +41,7 @@ export class XyzzyApp extends ScopedElementsMixin(LitElement) {
       store
     );
 
-    new ContextProvider(this, xyzzyContext, new XyzzyStore(cellClient, store));
+    new ContextProvider(this, xyzzyContext, new XyzzyStore(xyzzyClient, store));
 
     this.loaded = true;
   }

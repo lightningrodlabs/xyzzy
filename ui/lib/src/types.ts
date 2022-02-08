@@ -1,7 +1,7 @@
 // TODO: add globally available interfaces for your elements
 
 import { EntryHashB64 } from "@holochain-open-dev/core-types";
-import { createContext, Context } from "@lit-labs/context";
+import { createContext, Context } from "@holochain-open-dev/context";
 import { XyzzyStore } from "./xyzzy.store";
 
 export const xyzzyContext : Context<XyzzyStore> = createContext('hc_zome_xyzzy/service');
