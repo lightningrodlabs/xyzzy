@@ -3,7 +3,7 @@ manifest_version: "1"
 name: xyzzy
 description: ~
 roles:
-  - id: xyzzy-role
+  - id: xyzzy
     provisioning:
       strategy: create
       deferred: false

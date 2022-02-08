@@ -1,7 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { state, property, query } from "lit/decorators.js";
 
-import { contextProvided } from "@lit-labs/context";
+import { contextProvided } from "@holochain-open-dev/context";
 import { StoreSubscriber } from "lit-svelte-stores";
 import { Unsubscriber } from "svelte/store";
 
@@ -46,7 +46,7 @@ export class XyzzyController extends ScopedElementsMixin(LitElement) {
   _profiles!: ProfilesStore;
 
   _myProfile = new StoreSubscriber(this, () => this._profiles.myProfile);
-  _knownProfiles = new StoreSubscriber(this, () => this._profiles.knownProfiles);
+  private _knownProfiles = new StoreSubscriber(this, () => this._profiles.knownProfiles);
   _zthings = new StoreSubscriber(this, () => this._store.zthings);
 
   /** Private properties */

@@ -21,7 +21,7 @@ fn init(_: ()) -> ExternResult<InitCallbackResult> {
 }
 
 entry_defs![
-    Path::entry_def(),
+    PathEntry::entry_def(),
     zthing::Zthing::entry_def()
 ];
 
