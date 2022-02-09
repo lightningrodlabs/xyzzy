@@ -23,15 +23,11 @@ export class XyzzyApp extends ScopedElementsMixin(LitElement) {
     
     const client = await HolochainClient.connect(`ws://localhost:${process.env.HC_PORT}`, "xyzzy");
 
-    const providerClient = client.forCell(
-      client.cellDataByRoleId('profiles')!
-    );
-
     const xyzzyClient = client.forCell(
       client.cellDataByRoleId('xyzzy')!
     );
 
-    const store = new ProfilesStore(providerClient, {avatarMode: "avatar"})
+    const store = new ProfilesStore(xyzzyClient, {avatarMode: "avatar"})
 
     store.fetchAllProfiles()
 
